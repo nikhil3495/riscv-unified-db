@@ -64282,7 +64282,7 @@ Included in::
 == vsadd.vi
 
 Synopsis::
-Vector signed addition with immediate
+Vector Single-Width Saturating Add Signed with Immediate
 
 Base::
 
@@ -64304,7 +64304,7 @@ Encoding::
 ....
 
 Description::
-Performs signed addition on elements from vector register vs2 and immediate value and stores results in vector register vd, using vector mask vm. The operation follows standard signed arithmetic rules.
+Performs saturating signed addition on elements from vector register vs2 and immediate value imm and stores results in vector register vd, using vector mask vm. If the result would overflow the destination, the result is replaced with the closest representable value, and the xref:csrs:vxsat.adoc#udb:doc:csr:vxsat[vxsat] bit is set.
 
 
 Decode Variables::
@@ -64335,7 +64335,7 @@ Included in::
 == vsadd.vv
 
 Synopsis::
-Vector signed addition
+Vector Single-Width Saturating Add Signed Vector
 
 Base::
 
@@ -64357,7 +64357,7 @@ Encoding::
 ....
 
 Description::
-Performs signed addition on elements from vector registers vs2 and vs1 and stores results in vector register vd, using vector mask vm. The operation follows standard signed arithmetic rules.
+Performs saturating signed addition on elements from vector registers vs2 and vs1 and stores results in vector register vd, using vector mask vm. If the result would overflow the destination, the result is replaced with the closest representable value, and the xref:csrs:vxsat.adoc#udb:doc:csr:vxsat[vxsat] bit is set.
 
 
 Decode Variables::
@@ -64388,7 +64388,7 @@ Included in::
 == vsadd.vx
 
 Synopsis::
-Vector signed addition with scalar
+Vector Single-Width Saturating Add Signed with Scalar
 
 Base::
 
@@ -64410,7 +64410,7 @@ Encoding::
 ....
 
 Description::
-Performs signed addition on elements from vector register vs2 and scalar register xs1 and stores results in vector register vd, using vector mask vm. The operation follows standard signed arithmetic rules.
+Performs saturating signed addition on elements from vector register vs2 and scalar register xs1 and stores results in vector register vd, using vector mask vm. If the result would overflow the destination, the result is replaced with the closest representable value, and the xref:csrs:vxsat.adoc#udb:doc:csr:vxsat[vxsat] bit is set.
 
 
 Decode Variables::
@@ -64441,7 +64441,7 @@ Included in::
 == vsaddu.vi
 
 Synopsis::
-Vector unsigned addition with immediate
+Vector Single-Width Saturating Add Unsigned with Immediate
 
 Base::
 
@@ -64463,7 +64463,7 @@ Encoding::
 ....
 
 Description::
-Performs unsigned addition on elements from vector register vs2 and immediate value and stores results in vector register vd, using vector mask vm. The operation follows standard unsigned arithmetic rules.
+Performs saturating unsigned addition on elements from vector register vs2 and immediate value imm and stores results in vector register vd, using vector mask vm. If the result would overflow the destination, the result is replaced with the closest representable value, and the xref:csrs:vxsat.adoc#udb:doc:csr:vxsat[vxsat] bit is set.
 
 
 Decode Variables::
@@ -64494,7 +64494,7 @@ Included in::
 == vsaddu.vv
 
 Synopsis::
-Vector unsigned addition
+Vector Single-Width Saturating Add Unsigned Vector
 
 Base::
 
@@ -64516,7 +64516,7 @@ Encoding::
 ....
 
 Description::
-Performs unsigned addition on elements from vector registers vs2 and vs1 and stores results in vector register vd, using vector mask vm. The operation follows standard unsigned arithmetic rules.
+Performs saturating unsigned addition on elements from vector registers vs2 and vs1 and stores results in vector register vd, using vector mask vm. If the result would overflow the destination, the result is replaced with the closest representable value, and the xref:csrs:vxsat.adoc#udb:doc:csr:vxsat[vxsat] bit is set.
 
 
 Decode Variables::
@@ -64547,7 +64547,7 @@ Included in::
 == vsaddu.vx
 
 Synopsis::
-Vector unsigned addition with scalar
+Vector Single-Width Saturating Add Unsigned with Scalar
 
 Base::
 
@@ -64569,7 +64569,7 @@ Encoding::
 ....
 
 Description::
-Performs unsigned addition on elements from vector register vs2 and scalar register xs1 and stores results in vector register vd, using vector mask vm. The operation follows standard unsigned arithmetic rules.
+Performs saturating unsigned addition on elements from vector register vs2 and scalar register xs1 and stores results in vector register vd, using vector mask vm. If the result would overflow the destination, the result is replaced with the closest representable value, and the xref:csrs:vxsat.adoc#udb:doc:csr:vxsat[vxsat] bit is set.
 
 
 Decode Variables::
@@ -74109,7 +74109,7 @@ Included in::
 == vwadd.vv
 
 Synopsis::
-Vector widening signed addition
+Vector Widening Integer Add Signed Vector
 
 Base::
 
@@ -74131,7 +74131,7 @@ Encoding::
 ....
 
 Description::
-Performs signed addition on elements from vector registers vs2 and vs1, widens the results, and stores them in vector register vd, using vector mask vm. The operation follows standard signed arithmetic rules.
+Widen and sign-extend signed elements from vector registers vs2 and vs1, add to produce a double-width sum, and store results in vector register vd, using vector mask vm.
 
 
 Decode Variables::
@@ -74162,7 +74162,7 @@ Included in::
 == vwadd.vx
 
 Synopsis::
-Vector widening signed addition with scalar
+Vector Widening Integer Add Signed with Scalar
 
 Base::
 
@@ -74184,7 +74184,7 @@ Encoding::
 ....
 
 Description::
-Performs signed addition on elements from vector register vs2 and scalar register xs1, widens the results, and stores them in vector register vd, using vector mask vm. The operation follows standard signed arithmetic rules.
+Widen and sign-extend signed elements from vector register vs2 and scalar register xs1, add to produce a double-width sum, and store results in vector register vd, using vector mask vm.
 
 
 Decode Variables::
@@ -74321,7 +74321,7 @@ Included in::
 == vwaddu.vv
 
 Synopsis::
-Vector widening unsigned addition
+Vector Widening Integer Add Unsigned Vector
 
 Base::
 
@@ -74343,7 +74343,7 @@ Encoding::
 ....
 
 Description::
-Performs unsigned addition on elements from vector registers vs2 and vs1, widens the results, and stores them in vector register vd, using vector mask vm. The operation follows standard unsigned arithmetic rules.
+Widen and zero-extend unsigned elements from vector registers vs2 and vs1, add to produce a double-width sum, and store results in vector register vd, using vector mask vm.
 
 
 Decode Variables::
@@ -74374,7 +74374,7 @@ Included in::
 == vwaddu.vx
 
 Synopsis::
-Vector widening unsigned addition with scalar
+Vector Widening Integer Add Unsigned with Scalar
 
 Base::
 
@@ -74396,7 +74396,7 @@ Encoding::
 ....
 
 Description::
-Performs unsigned addition on elements from vector register vs2 and scalar register xs1, widens the results, and stores them in vector register vd, using vector mask vm. The operation follows standard unsigned arithmetic rules.
+Widen and zero-extend unsigned elements from vector register vs2 and scalar register xs1, add to produce a double-width sum, and store results in vector register vd, using vector mask vm.
 
 
 Decode Variables::
@@ -74639,7 +74639,7 @@ Included in::
 == vwmaccsu.vv
 
 Synopsis::
-Vector widening signed-unsigned multiply-add
+Vector Widening Integer Multiply-Add Signed-Unsigned Vector
 
 Base::
 
@@ -74661,7 +74661,7 @@ Encoding::
 ....
 
 Description::
-Performs widening signed-unsigned multiplication on elements from vector registers vs2 (unsigned) and vs1 (signed), adds the result to elements from vector register vd, and stores the final results in vector register vd, using vector mask vm.
+Widen and multiply signed elements from vector register vs1 by unsigned elements from vector register vs2 to produce a double-width product, add the product to the double-width elements of vector register vd, and store results in vector register vd, using vector mask vm.
 
 
 Decode Variables::
@@ -74692,7 +74692,7 @@ Included in::
 == vwmaccsu.vx
 
 Synopsis::
-Vector widening signed-unsigned multiply-add with scalar
+Vector Widening Integer Multiply-Add Signed-Unsigned with Scalar
 
 Base::
 
@@ -74714,7 +74714,7 @@ Encoding::
 ....
 
 Description::
-Performs widening signed-unsigned multiplication on elements from vector register vs2 (unsigned) and scalar register xs1 (signed), adds the result to elements from vector register vd, and stores the final results in vector register vd, using vector mask vm.
+Widen and multiply signed elements from scalar register xs1 by unsigned elements from vector register vs2 to produce a double-width product, add the product to the double-width elements of vector register vd, and store results in vector register vd, using vector mask vm.
 
 
 Decode Variables::
@@ -74851,7 +74851,7 @@ Included in::
 == vwmaccus.vx
 
 Synopsis::
-Vector widening unsigned-signed multiply-add with scalar
+Vector Widening Integer Multiply-Add Unsigned-Signed with Scalar
 
 Base::
 
@@ -74873,7 +74873,7 @@ Encoding::
 ....
 
 Description::
-Performs widening unsigned-signed multiplication on elements from vector register vs2 (signed) and scalar register xs1 (unsigned), adds the result to elements from vector register vd, and stores the final results in vector register vd, using vector mask vm.
+Widen and multiply unsigned elements from scalar register xs1 by signed elements from vector register vs2 to produce a double-width product, add the product to the double-width elements of vector register vd, and store results in vector register vd, using vector mask vm.
 
 
 Decode Variables::
